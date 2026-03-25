@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Last Minute Xerox & Photo Lab – Kengeri, Bengaluru</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --ink: #0f0e0d;
+  --ink2: #2a2825;
+  --muted: #706c66;
+  --light: #a09b93;
+  --paper: #faf8f5;
+  --cream: #f3f0eb;
+  --line: #e6e2db;
+  --red: #c8321a;
+  --red-soft: #fdf1ee;
+  --green: #1d7a47;
+  --green-soft: #eef7f2;
+  --amber: #d97706;
+  --wa: #25D366;
+  --wa-dark: #1aaf57;
+  --blue: #1e40af;
+  --blue-soft: #eff6ff;
+  --r: 10px;
+  --shadow: 0 2px 16px rgba(15,14,13,0.08);
+  --shadow-lg: 0 8px 40px rgba(15,14,13,0.12);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(250,248,245,0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+  padding: 0 5%;
+  height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-brand {
+  display: flex; align-items: center; gap: 10px;
+}
+.nav-dot {
+  width: 10px; height: 10px;
+  background: var(--red);
+  border-radius: 50%;
+  animation: blink 2.5s ease-in-out infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.nav-name {
+  
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--ink);
+  line-height: 1.2;
+}
+.nav-name small {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+.nav-links {
+  display: flex; align-items: center; gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  color: var(--muted);
+  font-size: 0.83rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-wa {
+  background: var(--wa);
+  color: #fff !important;
+  padding: 9px 18px;
+  border-radius: 6px;
+  font-weight: 600 !important;
+  font-size: 0.8rem !important;
+  display: flex; align-items: center; gap: 6px;
+  transition: background 0.15s, transform 0.15s;
+}
+.nav-wa:hover { background: var(--wa-dark) !important; transform: translateY(-1px); }
+
+/* ── HERO ── */
+#hero {
+  padding: 64px 5% 60px;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 56px;
+  align-items: start;
+  border-bottom: 1px solid var(--line);
+}
+
+.open-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--green-soft);
+  border: 1px solid #b6e4cc;
+  color: var(--green);
+  font-size: 0.73rem; font-weight: 600;
+  letter-spacing: 0.2px;
+  padding: 5px 13px; border-radius: 20px;
+  margin-bottom: 20px;
+}
+.open-badge::before {
+  content: '';
+  width: 7px; height: 7px;
+  background: var(--green);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+.closed-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--red-soft);
+  border: 1px solid #f5c5c2;
+  color: var(--red);
+  font-size: 0.73rem; font-weight: 600;
+  letter-spacing: 0.2px;
+  padding: 5px 13px; border-radius: 20px;
+  margin-bottom: 20px;
+}
+.closed-badge::before {
+  content: '';
+  width: 7px; height: 7px;
+  background: var(--red);
+  border-radius: 50%;
+}
+.open-badge::before {
+  content: '';
+  width: 7px; height: 7px;
+  background: var(--green);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+}
+
+h1 {
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.6px;
+  margin-bottom: 16px;
+}
+h1 em {
+  font-style: normal;
+  color: var(--red);
+}
+
+.hero-sub {
+  font-size: 0.97rem;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 500px;
+  margin-bottom: 28px;
+}
+.hero-sub strong { color: var(--ink); font-weight: 600; }
+
+.hero-btns {
+  display: flex; gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.btn-wa {
+  background: var(--wa);
+  color: #fff;
+  padding: 13px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  text-decoration: none;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 4px 16px rgba(37,211,102,0.3);
+}
+.btn-wa:hover { background: var(--wa-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,211,102,0.35); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  padding: 13px 22px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.88rem;
+  text-decoration: none;
+  border: 1.5px solid var(--line);
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: border-color 0.15s, background 0.15s;
+}
+.btn-ghost:hover { border-color: var(--ink2); background: var(--cream); }
+
+.trust-row {
+  display: flex; gap: 8px; flex-wrap: nowrap;
+  overflow-x: auto;
+}
+.trust-chip {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 0.75rem; font-weight: 600;
+  padding: 5px 11px; border-radius: 20px;
+  white-space: nowrap; flex-shrink: 0;
+}
+.trust-chip--amber {
+  background: #fff8e1; color: #92400e;
+  border: 1px solid #fcd34d;
+}
+.trust-chip--green {
+  background: var(--green-soft); color: var(--green);
+  border: 1px solid #b6e4cc;
+}
+
+/* HERO RIGHT CARDS */
+.hero-cards {
+  display: flex; flex-direction: column; gap: 10px;
+}
+.h-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: 14px 16px;
+  display: flex; align-items: center; gap: 12px;
+  transition: box-shadow 0.2s;
+}
+.h-card:hover { box-shadow: var(--shadow); }
+.h-icon {
+  width: 38px; height: 38px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.05rem; flex-shrink: 0;
+}
+.ic-green { background: var(--green-soft); }
+.ic-red { background: var(--red-soft); }
+.ic-blue { background: var(--blue-soft); }
+.ic-amber { background: #fff8e1; }
+.h-label { font-size: 0.68rem; color: var(--light); font-weight: 500; margin-bottom: 1px; }
+.h-val { font-size: 0.85rem; font-weight: 700; color: var(--ink);  }
+
+.ic-wa { background: #e8faf0; }
+.h-card--call { border-color: #b6e4cc; }
+.h-card--call:hover { box-shadow: 0 2px 16px rgba(37,211,102,0.15); }
+.h-val--green { color: var(--green) !important; }
+
+/* ── REVIEWS BAR ── */
+.reviews-strip {
+  background: var(--ink);
+  padding: 13px 5%;
+  display: flex; align-items: center; gap: 16px;
+  flex-wrap: wrap;
+}
+.stars { color: #f59e0b; letter-spacing: 2px; font-size: 0.9rem; }
+.r-score {  font-weight: 700; font-size: 0.9rem; color: #fff; }
+.r-count { font-size: 0.78rem; color: #a09b93; }
+.r-divider { width: 1px; height: 20px; background: #333; }
+.r-quotes { display: flex; gap: 8px; margin-left: auto; }
+.r-chip {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 0.74rem;
+  color: #c8c4bc;
+  font-style: italic;
+  white-space: nowrap;
+}
+.r-link {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 0.78rem;
+  color: #f59e0b;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid rgba(245,158,11,0.3);
+  padding: 6px 13px;
+  border-radius: 6px;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+.r-link:hover { background: rgba(245,158,11,0.1); }
+
+/* ── SECTIONS ── */
+section { padding: 72px 5%; }
+.eyebrow {
+  font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--red); margin-bottom: 8px;
+}
+h2 {
+  font-size: clamp(1.55rem, 2.8vw, 2.1rem);
+  font-weight: 800; letter-spacing: -0.3px;
+  line-height: 1.15; margin-bottom: 10px;
+}
+.sec-desc {
+  font-size: 0.92rem; color: var(--muted);
+  line-height: 1.75; max-width: 460px;
+  margin-bottom: 40px;
+}
+.sec-head { margin-bottom: 40px; }
+
+/* ── PASSPORT SECTION ── */
+#passport-photos { background: #fff; }
+.p-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+.p-card {
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--red);
+  border-radius: var(--r);
+  padding: 20px;
+  background: #fff;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.p-ico {
+  width: 40px; height: 40px;
+  background: var(--red-soft);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; flex-shrink: 0;
+}
+.p-ico.green { background: var(--green-soft); }
+.p-name { font-weight: 800; font-size: 0.9rem; color: var(--ink); }
+.p-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.p-footer { display: flex; align-items: center; justify-content: space-between; }
+.p-badge {
+  display: inline-block;
+  background: var(--green-soft);
+  border: 1px solid #b6e4cc;
+  color: var(--green);
+  font-size: 0.68rem; font-weight: 700;
+  padding: 3px 10px; border-radius: 20px;
+}
+.p-arrow { font-size: 0.75rem; color: var(--light); }
+
+/* ── PRINTING SECTION ── */
+#printing { background: var(--cream); }
+.pr-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 10px;
+}
+.pr-item {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: 16px 18px;
+  display: flex; align-items: center; gap: 14px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.pr-item:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+.pr-ico {
+  width: 34px; height: 34px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.pr-ico--gray { background: var(--cream); }
+.pr-ico--red { background: var(--red-soft); }
+.pr-ico--blue { background: var(--blue-soft); }
+.pr-ico--amber { background: #fff8e1; }
+.pr-ico--green { background: var(--green-soft); }
+.pr-name {  font-weight: 600; font-size: 0.84rem; color: var(--ink); }
+.pr-note { font-size: 0.74rem; color: var(--muted); margin-top: 2px; }
+
+/* ── LAMINATION ── */
+#lamination { background: #fff; }
+.lam-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+@media (max-width: 768px) {
+  .lam-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.lam-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: 18px 14px;
+  display: flex; align-items: center; gap: 12px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.lam-card:hover { border-color: var(--red); box-shadow: 0 4px 16px rgba(200,50,26,0.08); }
+.lam-ico {
+  width: 34px; height: 34px;
+  border-radius: 8px;
+  background: var(--red-soft);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.lam-ico--blue { background: var(--blue-soft); }
+.lam-ico--amber { background: #fff8e1; }
+.lam-ico--green { background: var(--green-soft); }
+.lam-name { font-size: 0.82rem; font-weight: 700; color: var(--ink); }
+
+/* ── B2B SECTION ── */
+#business {
+  background: #0f172a;
+  color: #fff;
+}
+#business .eyebrow { color: #f59e0b; }
+#business h2 { color: #fff; }
+#business .sec-desc { color: #a09b93; }
+.b2b-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-bottom: 36px;
+}
+.b2b-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--r);
+  padding: 22px 20px;
+  transition: background 0.2s, border-color 0.2s;
+}
+.b2b-card:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.22); }
+.b2b-ico {
+  width: 40px; height: 40px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 12px;
+  flex-shrink: 0;
+}
+.b2b-title {  font-weight: 700; font-size: 0.88rem; color: #fff; margin-bottom: 6px; }
+.b2b-desc { font-size: 0.78rem; color: #8a8680; line-height: 1.65; }
+.b2b-cta {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--wa);
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background 0.15s, transform 0.15s;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.3);
+}
+.b2b-cta:hover { background: var(--wa-dark); transform: translateY(-2px); }
+.b2b-note {
+  margin-top: 12px;
+  font-size: 0.78rem;
+  color: #8a8680;
+}
+
+/* ── WHATSAPP SECTION ── */
+#wa-section {
+  background: var(--cream);
+  padding: 72px 5%;
+}
+.wa-inner {
+  background: var(--ink);
+  border-radius: 16px;
+  padding: 40px 40px 36px;
+  max-width: 640px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+.wa-inner::before {
+  content: '';
+  position: absolute; top: -60px; right: -60px;
+  width: 240px; height: 240px;
+  background: var(--wa);
+  opacity: 0.05;
+  border-radius: 50%;
+}
+.wa-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(37,211,102,0.15);
+  border: 1px solid rgba(37,211,102,0.25);
+  color: var(--wa);
+  font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.5px; text-transform: uppercase;
+  padding: 4px 12px; border-radius: 20px;
+  margin-bottom: 16px;
+}
+.wa-inner h2 { color: #fff; margin-bottom: 8px; }
+.wa-inner p { font-size: 0.88rem; color: #706c66; margin-bottom: 28px; }
+.wa-steps {
+  display: flex;
+  gap: 0;
+  margin-bottom: 28px;
+  position: relative;
+}
+.wa-step-line {
+  position: absolute;
+  top: 20px; left: 20px; right: 20px;
+  height: 1px;
+  background: rgba(255,255,255,0.08);
+  z-index: 0;
+}
+.wa-step {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.wa-step-icon {
+  width: 40px; height: 40px;
+  background: rgba(37,211,102,0.15);
+  border: 1.5px solid var(--wa);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 10px;
+  font-size: 1rem;
+}
+.wa-step-icon--active { background: var(--wa); border-color: var(--wa); }
+.wa-step-title { font-size: 0.78rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.wa-step-sub { font-size: 0.7rem; color: #706c66; line-height: 1.5; }
+.btn-wa-big {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  background: var(--wa);
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 10px;
+  font-weight: 700; font-size: 1rem;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.25);
+  transition: background 0.15s, transform 0.15s;
+}
+.btn-wa-big:hover { background: var(--wa-dark); transform: translateY(-2px); }
+@media (max-width: 480px) {
+  .wa-inner { padding: 28px 20px 24px; }
+  .wa-step-sub { display: none; }
+}
+
+/* ── CONTACT ── */
+#contact { background: var(--cream); }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+.info-list { display: flex; flex-direction: column; gap: 20px; }
+.info-row {
+  display: flex; gap: 14px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: 16px 18px;
+}
+.i-ico {
+  font-size: 1.2rem; flex-shrink: 0;
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  padding-top: 2px;
+}
+.i-text h4 { font-weight: 700; font-size: 0.83rem; margin-bottom: 4px; }
+.i-text p { font-size: 0.8rem; color: var(--muted); line-height: 1.65; }
+.i-text a { color: var(--green); text-decoration: none; font-weight: 600; }
+.i-text a:hover { text-decoration: underline; }
+.map-wrap {
+  border-radius: var(--r);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  height: 380px;
+}
+.map-wrap iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+.hours-grid { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+.hours-row { display: flex; align-items: flex-start; gap: 12px; }
+.hours-day {
+  font-size: 0.78rem; font-weight: 700; color: var(--ink);
+  min-width: 72px; padding-top: 3px; flex-shrink: 0;
+}
+.hours-slots { display: flex; flex-wrap: wrap; gap: 6px; }
+.hours-slot {
+  display: inline-block;
+  background: var(--green-soft);
+  border: 1px solid #b6e4cc;
+  color: var(--green);
+  font-size: 0.75rem; font-weight: 600;
+  padding: 3px 10px; border-radius: 20px;
+}
+
+.landmark-pills {
+  display: flex; flex-wrap: wrap; gap: 7px;
+  margin-top: 8px;
+}
+.landmark-pill {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 4px 11px;
+  font-size: 0.75rem; color: var(--muted);
+}
+.landmark-pill strong { color: var(--ink); font-weight: 700; }
+
+.urgent-card {
+  background: #fff8f0;
+  border: 1.5px solid #f5c89a;
+  border-radius: var(--r);
+  padding: 16px 18px;
+  margin-top: 10px;
+}
+.urgent-top {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 10px;
+}
+.urgent-badge {
+  background: #ea580c;
+  color: #fff;
+  font-size: 0.65rem; font-weight: 700;
+  letter-spacing: 0.5px; text-transform: uppercase;
+  padding: 3px 9px; border-radius: 5px;
+  flex-shrink: 0;
+}
+.urgent-title {
+  font-size: 0.88rem; font-weight: 800;
+  color: #7c2d12;
+}
+.urgent-pills {
+  display: flex; flex-wrap: wrap; gap: 7px;
+  margin-bottom: 10px;
+}
+.urgent-pill {
+  background: #fff;
+  border: 0.5px solid #f5c89a;
+  border-radius: 20px;
+  padding: 4px 11px;
+  font-size: 0.75rem; font-weight: 600;
+  color: #7c2d12;
+}
+.urgent-note {
+  font-size: 0.72rem; color: #9a3412; line-height: 1.5;
+}
+.urgent-note a { color: #ea580c; font-weight: 600; text-decoration: none; }
+.urgent-note a:hover { text-decoration: underline; }
+
+/* ── ATTRIBUTES ── */
+.attr-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+.attr-chip {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: 12px 14px;
+  display: flex; align-items: center; gap: 10px;
+}
+.attr-ico {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.attr-ico--purple { background: #f3f0ff; }
+.attr-ico--rainbow { background: #fff0f6; }
+.attr-ico--blue { background: var(--blue-soft); }
+.attr-title { font-size: 0.78rem; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+.attr-sub { font-size: 0.68rem; color: var(--muted); line-height: 1.4; }
+@media (max-width: 600px) {
+  .attr-row { grid-template-columns: 1fr; }
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--ink2);
+  padding: 28px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.f-brand {
+  display: flex; align-items: center; gap: 10px;
+}
+.f-dot { width: 8px; height: 8px; background: var(--red); border-radius: 50%; }
+.f-name {  font-weight: 700; font-size: 0.85rem; color: #fff; }
+.f-name small { display: block; font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 0.7rem; color: #6b6760; }
+.f-links { display: flex; gap: 20px; list-style: none; }
+.f-links a { font-size: 0.78rem; color: #6b6760; text-decoration: none; transition: color 0.15s; }
+.f-links a:hover { color: #a09b93; }
+.f-copy { font-size: 0.73rem; color: #4a4845; }
+
+/* ── STICKY BOTTOM BAR ── */
+.sticky-bar {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: #fff;
+  border-top: 1px solid var(--line);
+  padding: 10px 5% 14px;
+  display: flex; align-items: center; gap: 10px;
+  z-index: 998;
+  transform: translateY(100%);
+  transition: transform 0.35s ease;
+  box-shadow: 0 -4px 20px rgba(15,14,13,0.08);
+}
+.sticky-bar.visible { transform: translateY(0); }
+.sticky-bar-info { flex: 1; min-width: 0; }
+.sticky-bar-label { font-size: 0.68rem; color: var(--muted); font-weight: 500; }
+.sticky-bar-number { font-size: 0.9rem; font-weight: 800; color: var(--ink); white-space: nowrap; }
+.sticky-btn-call {
+  display: flex; align-items: center; gap: 6px;
+  background: var(--red);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 700; font-size: 0.82rem;
+  text-decoration: none; white-space: nowrap;
+  transition: opacity 0.15s;
+  flex-shrink: 0;
+}
+.sticky-btn-call:hover { opacity: 0.88; }
+.sticky-btn-wa {
+  display: flex; align-items: center; gap: 6px;
+  background: var(--wa);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 700; font-size: 0.82rem;
+  text-decoration: none; white-space: nowrap;
+  transition: opacity 0.15s;
+  flex-shrink: 0;
+}
+.sticky-btn-wa:hover { opacity: 0.88; }
+
+/* ── REVEAL ANIMATIONS ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  #hero {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 40px 5% 36px;
+  }
+  .hero-cards { display: grid; grid-template-columns: 1fr 1fr; }
+  .nav-links { display: none; }
+  .r-quotes { display: none; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .map-wrap { height: 260px; }
+  footer { flex-direction: column; align-items: flex-start; }
+  .b2b-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .hero-cards { grid-template-columns: 1fr; }
+  .b2b-grid { grid-template-columns: 1fr; }
+  h1 { font-size: 1.85rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">
+    <div class="nav-dot"></div>
+    <div class="nav-name">
+      Last Minute Xerox
+      <small>Back Gate IBS, Kengeri · Open till 10 PM</small>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#passport-photos">Passport Photos</a></li>
+    <li><a href="#printing">Printing</a></li>
+    <li><a href="#lamination">Lamination</a></li>
+    <li><a href="#contact">Find Us</a></li>
+    <li><a href="https://wa.me/918050044248" target="_blank">WhatsApp</a></li>
+    <li>
+      <a href="tel:+918050044248" class="nav-wa">
+        📞 Call Now
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div id="status-badge" class="open-badge">⏳ Checking hours...</div>
+    <h1>Xerox, Prints &<br/>Passport Photos<br/>Near IBS Kengeri</h1>
+    <p class="hero-sub">
+      Your neighbourhood print shop — open late, no queues, no waiting. Send your files on WhatsApp and walk in to collect. <strong>Back gate of IBS College, Vaishnavi Nagar.</strong>
+    </p>
+    <div class="hero-btns">
+      <a href="https://wa.me/918050044248" class="btn-wa" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Send Files — 8050044248
+      </a>
+      <a href="#contact" class="btn-ghost">📍 Get Directions</a>
+    </div>
+    <div class="trust-row">
+      <div class="trust-chip trust-chip--amber">⭐ 5.0 · 100+ Reviews</div>
+      <div class="trust-chip trust-chip--green">✓ Same Day</div>
+      <div class="trust-chip trust-chip--green">✓ Walk-ins Welcome</div>
+      <div class="trust-chip trust-chip--green">✓ Student Rates</div>
+    </div>
+  </div>
+
+  <div class="hero-cards">
+    <div class="h-card">
+      <div class="h-icon ic-green">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1d7a47" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <div>
+        <div class="h-label">Today's Hours</div>
+        <div class="h-val" id="hours-display">Loading...</div>
+      </div>
+    </div>
+    <div class="h-card">
+      <div class="h-icon ic-red">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c8321a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div>
+        <div class="h-label">Location</div>
+        <div class="h-val">Back Gate, IBS Kengeri</div>
+      </div>
+    </div>
+    <a href="tel:+918050044248" class="h-card h-card--call" style="text-decoration:none;">
+      <div class="h-icon ic-wa">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </div>
+      <div>
+        <div class="h-label">Tap to Call / WhatsApp</div>
+        <div class="h-val h-val--green">8050044248</div>
+      </div>
+    </a>
+    <a href="https://maps.google.com/?q=Last+Minute+Xerox+Kengeri+Bengaluru" target="_blank" class="h-card" style="text-decoration:none; cursor:pointer;">
+      <div class="h-icon ic-amber">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="#d97706"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <div>
+        <div class="h-label">Google Rating</div>
+        <div class="h-val">★★★★★ <span style="color:var(--muted);font-size:0.75rem;">5.0 · 100+ ↗</span></div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- REVIEWS BAR -->
+<div class="reviews-strip">
+  <span class="stars">★★★★★</span>
+  <span class="r-score">5.0</span>
+  <span class="r-count">· 100+ verified Google reviews</span>
+  <div class="r-divider"></div>
+  <div class="r-quotes">
+    <div class="r-chip">"Very professional, affordable rates" — Student</div>
+    <div class="r-chip">"Best xerox shop in the area, friendly owner" — Local</div>
+  </div>
+  <a href="https://maps.google.com/?q=Last+Minute+Xerox+Kengeri+Bengaluru" target="_blank" class="r-link">
+    ⭐ Read all reviews ↗
+  </a>
+</div>
+
+<!-- PASSPORT PHOTOS -->
+<section id="passport-photos">
+  <div class="sec-head reveal">
+    <p class="eyebrow">Passport & ID Photos</p>
+    <h2>Passport Photos<br/>Accepted Everywhere</h2>
+    <p class="sec-desc">Printed, cut, and ready same day. Accepted for passports, visas, Aadhar, PAN and all government IDs.</p>
+  </div>
+  <div class="p-grid reveal">
+    <div class="p-card">
+      <div class="p-ico">🛂</div>
+      <div class="p-name">Passport Photography</div>
+      <div class="p-desc">Government & visa compliant. Correct size, background, and finish guaranteed.</div>
+      <div class="p-footer"><span class="p-badge">Same Day</span><span class="p-arrow">→</span></div>
+    </div>
+    <div class="p-card">
+      <div class="p-ico">🪪</div>
+      <div class="p-name">Passport Size Photos</div>
+      <div class="p-desc">Multiple copies cut to exact size — for ID cards, forms, and all applications.</div>
+      <div class="p-footer"><span class="p-badge">Walk-in Ready</span><span class="p-arrow">→</span></div>
+    </div>
+    <div class="p-card">
+      <div class="p-ico">📐</div>
+      <div class="p-name">Stamp Size Photos</div>
+      <div class="p-desc">Smaller format photos for PAN cards, ration cards, and government documents.</div>
+      <div class="p-footer"><span class="p-badge">Quick Print</span><span class="p-arrow">→</span></div>
+    </div>
+    <div class="p-card">
+      <div class="p-ico green">📲</div>
+      <div class="p-name">Digital Copy on WhatsApp</div>
+      <div class="p-desc">Receive a digital copy of your photo on WhatsApp instantly for future use.</div>
+      <div class="p-footer"><span class="p-badge">Instant</span><span class="p-arrow">→</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRINTING -->
+<section id="printing">
+  <div class="sec-head reveal">
+    <p class="eyebrow">Xerox & Printing</p>
+    <h2>Printed Fast.<br/>Picked Up Ready.</h2>
+    <p class="sec-desc">From single-page notes to bulk document printing — fast, crisp, and priced for students and professionals.</p>
+  </div>
+  <div class="pr-grid reveal">
+    <div class="pr-item">
+      <div class="pr-ico pr-ico--gray">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5f5e5a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      </div>
+      <div><div class="pr-name">Xerox / Photocopying</div><div class="pr-note">B&W copies, fast turnaround</div></div>
+    </div>
+    <div class="pr-item">
+      <div class="pr-ico pr-ico--red">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c8321a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+      </div>
+      <div><div class="pr-name">Colour Printing</div><div class="pr-note">Vivid prints for photos & presentations</div></div>
+    </div>
+    <div class="pr-item">
+      <div class="pr-ico pr-ico--gray">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5f5e5a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      </div>
+      <div><div class="pr-name">B&W Printout</div><div class="pr-note">Documents, notes, assignments</div></div>
+    </div>
+    <div class="pr-item">
+      <div class="pr-ico pr-ico--blue">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1e40af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>
+      </div>
+      <div><div class="pr-name">Document Scanning</div><div class="pr-note">Digital files sent to WhatsApp</div></div>
+    </div>
+    <div class="pr-item">
+      <div class="pr-ico pr-ico--gray">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5f5e5a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </div>
+      <div><div class="pr-name">Business Document Printing</div><div class="pr-note">Invoices, letterheads, forms</div></div>
+    </div>
+    <div class="pr-item">
+      <div class="pr-ico pr-ico--amber">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      </div>
+      <div><div class="pr-name">Photo Printing</div><div class="pr-note">High-quality prints, multiple sizes</div></div>
+    </div>
+    <div class="pr-item">
+      <div class="pr-ico pr-ico--amber">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+      </div>
+      <div><div class="pr-name">Polaroid Photos – Pack of 9</div><div class="pr-note">Retro-style prints, great as keepsakes</div></div>
+    </div>
+    <div class="pr-item">
+      <div class="pr-ico pr-ico--amber">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+      </div>
+      <div><div class="pr-name">Photo Collage</div><div class="pr-note">Custom multi-photo layout on one print</div></div>
+    </div>
+    <div class="pr-item">
+      <div class="pr-ico pr-ico--gray">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5f5e5a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      </div>
+      <div><div class="pr-name">Photo Framing</div><div class="pr-note">Frame your favourite photos & memories</div></div>
+    </div>
+    <div class="pr-item">
+      <div class="pr-ico pr-ico--red">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c8321a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+      </div>
+      <div><div class="pr-name">Posters</div><div class="pr-note">Large format for events & promotions</div></div>
+    </div>
+    <div class="pr-item">
+      <div class="pr-ico pr-ico--red">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c8321a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><line x1="5" y1="6" x2="19" y2="6"/><line x1="5" y1="18" x2="13" y2="18"/></svg>
+      </div>
+      <div><div class="pr-name">Vision Board Prints</div><div class="pr-note">Custom layouts, print-ready</div></div>
+    </div>
+    <div class="pr-item">
+      <div class="pr-ico pr-ico--green">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1d7a47" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      </div>
+      <div><div class="pr-name">Resume Printing & Prep</div><div class="pr-note">Makeover + professional output</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LAMINATION -->
+<section id="lamination">
+  <div class="sec-head reveal">
+    <p class="eyebrow">Lamination</p>
+    <h2>Your Cards,<br/>Protected for Life</h2>
+    <p class="sec-desc">Quick, durable lamination to protect your important cards and documents.</p>
+  </div>
+  <div class="lam-grid reveal">
+    <div class="lam-card">
+      <div class="lam-ico">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c8321a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="7" y1="9" x2="17" y2="9"/><line x1="7" y1="13" x2="12" y2="13"/></svg>
+      </div>
+      <div class="lam-name">ID Card</div>
+    </div>
+    <div class="lam-card">
+      <div class="lam-ico">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c8321a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="7" y1="9" x2="17" y2="9"/><line x1="7" y1="13" x2="17" y2="13"/><line x1="7" y1="17" x2="12" y2="17"/></svg>
+      </div>
+      <div class="lam-name">Long Aadhar Card</div>
+    </div>
+    <div class="lam-card">
+      <div class="lam-ico lam-ico--blue">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1e40af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      </div>
+      <div class="lam-name">A4 Document / Photo</div>
+    </div>
+    <div class="lam-card">
+      <div class="lam-ico lam-ico--amber">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-4"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      </div>
+      <div class="lam-name">RC Card</div>
+    </div>
+    <div class="lam-card">
+      <div class="lam-ico lam-ico--amber">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+      </div>
+      <div class="lam-name">PAN Card</div>
+    </div>
+    <div class="lam-card">
+      <div class="lam-ico">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c8321a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><line x1="13" y1="9" x2="18" y2="9"/><line x1="13" y1="13" x2="18" y2="13"/><line x1="7" y1="17" x2="18" y2="17"/></svg>
+      </div>
+      <div class="lam-name">Aadhar Card</div>
+    </div>
+    <div class="lam-card">
+      <div class="lam-ico lam-ico--green">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1d7a47" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      </div>
+      <div class="lam-name">Spiral Binding</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHATSAPP CTA -->
+<section id="wa-section">
+  <div class="wa-inner reveal">
+    <div class="wa-badge">⚡ Fastest Way to Get Your Prints</div>
+    <h2>Send Files on WhatsApp,<br/>Pick Up Ready</h2>
+    <p>No waiting when you arrive — here's how it works:</p>
+    <div class="wa-steps">
+      <div class="wa-step-line"></div>
+      <div class="wa-step">
+        <div class="wa-step-icon wa-step-icon--active">📱</div>
+        <div class="wa-step-title">Send files</div>
+        <div class="wa-step-sub">WhatsApp your docs or photos</div>
+      </div>
+      <div class="wa-step">
+        <div class="wa-step-icon">🖨️</div>
+        <div class="wa-step-title">We print</div>
+        <div class="wa-step-sub">Ready before you arrive</div>
+      </div>
+      <div class="wa-step">
+        <div class="wa-step-icon">✅</div>
+        <div class="wa-step-title">Walk in & collect</div>
+        <div class="wa-step-sub">Zero wait, grab & go</div>
+      </div>
+    </div>
+    <a href="https://wa.me/918050044248" class="btn-wa-big" target="_blank">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp — 8050044248
+    </a>
+  </div>
+</section>
+
+<!-- BUSINESS / B2B -->
+<section id="business">
+  <div class="sec-head reveal">
+    <p class="eyebrow">For Businesses</p>
+    <h2>Bulk Orders.<br/>On Time. Every Time.</h2>
+    <p class="sec-desc">From coaching centres to corporate offices — urgent orders prioritised, bulk orders handled, every time. Reliable. On time.</p>
+  </div>
+  <div class="b2b-grid reveal">
+    <div class="b2b-card">
+      <div class="b2b-ico">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+      </div>
+      <div class="b2b-title">Bulk Printing Orders</div>
+      <div class="b2b-desc">Rosters, forms, business docs, invoices — printed in volume without compromising on quality or speed.</div>
+    </div>
+    <div class="b2b-card">
+      <div class="b2b-ico">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-4"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      </div>
+      <div class="b2b-title">Delivery Within Kengeri</div>
+      <div class="b2b-desc">Send your files on WhatsApp. We print and deliver to your office or coaching centre within 3km.</div>
+    </div>
+    <div class="b2b-card">
+      <div class="b2b-ico">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+      </div>
+      <div class="b2b-title">Monthly Print Contracts</div>
+      <div class="b2b-desc">Set up a recurring print arrangement. Same vendor, every order, every time — no need to coordinate each time.</div>
+    </div>
+    <div class="b2b-card">
+      <div class="b2b-ico">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      </div>
+      <div class="b2b-title">Urgent Orders Prioritised</div>
+      <div class="b2b-desc">We treat every business print job like it's urgent. Because for you, it is. Walk in or call — we move fast.</div>
+    </div>
+  </div>
+  <div class="reveal">
+    <a href="https://wa.me/918050044248?text=Hi%2C+I%27m+interested+in+bulk%2Fbusiness+printing" class="b2b-cta" target="_blank">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp for Business Orders
+    </a>
+    <p class="b2b-note">Serving offices, schools, coaching centres & small businesses near Kengeri</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="sec-head reveal">
+    <p class="eyebrow">Find Us</p>
+    <h2>Come Find Us</h2>
+  </div>
+  <div class="contact-grid reveal">
+    <div class="info-list">
+      <div class="info-row">
+        <div class="i-ico">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c8321a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="i-text">
+          <h4>Address</h4>
+          <p>10th Cross, Back Gate of IBS (ICFAI Business School),<br/>Vaishnavi Nagar, Kengeri Check Post, Bengaluru – 560060</p>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="i-ico">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1e40af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="i-text">
+          <h4>Nearby Landmarks</h4>
+          <div class="landmark-pills">
+            <span class="landmark-pill">📍 IBS Main Gate <strong>3 mins</strong></span>
+            <span class="landmark-pill">📍 RajaRajeswari Medical College <strong>3 mins</strong></span>
+            <span class="landmark-pill">📍 ACS College <strong>6 mins</strong></span>
+            <span class="landmark-pill">📍 Christ College <strong>15 mins</strong></span>
+            <span class="landmark-pill">🚇 Challaghatta Metro <strong>nearby</strong></span>
+          </div>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="i-ico">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1d7a47" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="i-text">
+          <h4>Opening Hours</h4>
+          <div class="hours-grid">
+            <div class="hours-row">
+              <span class="hours-day">Mon – Sat</span>
+              <div class="hours-slots">
+                <span class="hours-slot">7:30 – 9:30 AM</span>
+                <span class="hours-slot">12:00 PM – 10:00 PM</span>
+              </div>
+            </div>
+            <div class="hours-row">
+              <span class="hours-day">Sunday</span>
+              <div class="hours-slots">
+                <span class="hours-slot">2:00 PM – 10:00 PM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="i-ico">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </div>
+        <div class="i-text">
+          <h4>WhatsApp / Call</h4>
+          <p><a href="https://wa.me/918050044248">8050044248</a> — Send files before you arrive</p>
+        </div>
+      </div>
+      <div class="urgent-card">
+        <div class="urgent-top">
+          <span class="urgent-badge">Urgent</span>
+          <span class="urgent-title">Exam Document Delivery</span>
+        </div>
+        <div class="urgent-pills">
+          <span class="urgent-pill">⚡ Same-day</span>
+          <span class="urgent-pill">🔒 Fast & secure</span>
+          <span class="urgent-pill">🚚 Direct to your centre</span>
+        </div>
+        <div class="urgent-note">Delivery charges apply. <a href="https://wa.me/918050044248" target="_blank">WhatsApp us</a> to place an urgent order.</div>
+      </div>
+      <div class="attr-row">
+        <div class="attr-chip">
+          <div class="attr-ico attr-ico--purple">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <div>
+            <div class="attr-title">Women-owned</div>
+            <div class="attr-sub">Proudly women-led business</div>
+          </div>
+        </div>
+        <div class="attr-chip">
+          <div class="attr-ico attr-ico--rainbow">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#db2777" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a9 9 0 0 1-9-9c0-4.97 4.03-9 9-9s9 4.03 9 9"/><path d="M12 18a5 5 0 0 1-5-5c0-2.76 2.24-5 5-5s5 2.24 5 5"/><path d="M12 14a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" fill="#db2777"/></svg>
+          </div>
+          <div>
+            <div class="attr-title">LGBTQ+ Friendly</div>
+            <div class="attr-sub">Safe & welcoming for all</div>
+          </div>
+        </div>
+        <div class="attr-chip">
+          <div class="attr-ico attr-ico--blue">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1e40af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-4"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <div>
+            <div class="attr-title">Free Parking</div>
+            <div class="attr-sub">Parking available on-site</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="map-wrap">
+      <iframe src="https://www.google.com/maps?q=12.8970619,77.4672507&z=17&output=embed" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-brand">
+    <div class="f-dot"></div>
+    <div class="f-name">
+      Last Minute Xerox
+      <small>Kengeri Checkpost, Bengaluru</small>
+    </div>
+  </div>
+  <ul class="f-links">
+    <li><a href="#passport-photos">Passport Photos</a></li>
+    <li><a href="#printing">Printing</a></li>
+    <li><a href="#lamination">Lamination</a></li>
+    <li><a href="#contact">Find Us</a></li>
+  </ul>
+  <p class="f-copy">© 2026 Last Minute Xerox, Printout & Photo Lab</p>
+</footer>
+
+<!-- STICKY BOTTOM BAR -->
+<div class="sticky-bar" id="sticky-bar">
+  <div class="sticky-bar-info">
+    <div class="sticky-bar-label">Need prints right now?</div>
+    <div class="sticky-bar-number">+91 80500 44248</div>
+  </div>
+  <a href="tel:+918050044248" class="sticky-btn-call">📞 Call</a>
+  <a href="https://wa.me/918050044248" class="sticky-btn-wa" target="_blank">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    WhatsApp
+  </a>
+</div>
+
+<script>
+// ── STICKY BAR ──
+const stickyBar = document.getElementById('sticky-bar');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    stickyBar.classList.add('visible');
+  } else {
+    stickyBar.classList.remove('visible');
+  }
+}, { passive: true });
+
+// ── REVEAL ANIMATION ──
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(r => obs.observe(r));
+
+// ── LIVE OPEN / CLOSED STATUS (IST) ──
+function updateStatus() {
+  const now = new Date();
+  const istOffset = 5.5 * 60;
+  const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+  const ist = new Date(utc + (istOffset * 60000));
+
+  const day = ist.getDay();
+  const totalMins = ist.getHours() * 60 + ist.getMinutes();
+
+  let isOpen = false;
+  let hoursText = '';
+  let hoursColor = '';
+
+  if (day >= 1 && day <= 6) {
+    if (totalMins >= 450 && totalMins < 570) {
+      isOpen = true;
+      hoursText = 'Open · Closes 9:30 AM';
+      hoursColor = '#1d7a47';
+    } else if (totalMins >= 570 && totalMins < 720) {
+      isOpen = false;
+      hoursText = 'Closed · Opens 12:00 PM';
+      hoursColor = '#c8321a';
+    } else if (totalMins >= 720 && totalMins < 1320) {
+      isOpen = true;
+      hoursText = 'Open · Closes 10:00 PM';
+      hoursColor = '#1d7a47';
+    } else {
+      isOpen = false;
+      hoursText = 'Closed · Opens 7:30 AM';
+      hoursColor = '#c8321a';
+    }
+  } else {
+    if (totalMins >= 840 && totalMins < 1320) {
+      isOpen = true;
+      hoursText = 'Open · Closes 10:00 PM';
+      hoursColor = '#1d7a47';
+    } else {
+      isOpen = false;
+      hoursText = 'Closed · Opens 2:00 PM';
+      hoursColor = '#c8321a';
+    }
+  }
+
+  const badge = document.getElementById('status-badge');
+  if (isOpen) {
+    badge.className = 'open-badge';
+    badge.textContent = 'Open Now · Kengeri, Bengaluru';
+  } else {
+    badge.className = 'closed-badge';
+    badge.textContent = 'Closed Now · Opens Soon';
+  }
+
+  const hoursEl = document.getElementById('hours-display');
+  if (hoursEl) {
+    hoursEl.textContent = hoursText;
+    hoursEl.style.color = hoursColor;
+  }
+}
+
+updateStatus();
+setInterval(updateStatus, 60000);
+</script>
+</body>
+</html>
