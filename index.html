@@ -17,6 +17,24 @@
   gtag('config', 'AW-17969851813');
 </script>
 
+<!-- Event snippet for Click to call conversion page -->
+<script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-17969851813/9cWhCIGk658cEKXb2PhC',
+        'value': 1.0,
+        'currency': 'INR',
+        'event_callback': callback
+    });
+    return false;
+  }
+</script>
+
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Last Minute Xerox & Photo Lab – Kengeri, Bengaluru</title>
@@ -347,10 +365,10 @@ h2 { font-size: clamp(1.55rem, 2.8vw, 2.1rem); font-weight: 800; letter-spacing:
   </ul>
   <div class="nav-actions">
     <a href="https://wa.me/918050044248" class="nav-wa" target="_blank">WhatsApp</a>
-    <a href="tel:+918050044248" class="nav-call">📞 Call Now</a>
+    <a href="tel:+918050044248" class="nav-call" onclick="return gtag_report_conversion('tel:+918050044248');">📞 Call Now</a>
   </div>
   <div class="mob-nav">
-    <a href="tel:+918050044248" class="mob-call">📞 Call</a>
+    <a href="tel:+918050044248" class="mob-call" onclick="return gtag_report_conversion('tel:+918050044248');">📞 Call</a>
     <a href="https://wa.me/918050044248" class="mob-wa" target="_blank">WhatsApp</a>
   </div>
 </nav>
@@ -367,7 +385,7 @@ h2 { font-size: clamp(1.55rem, 2.8vw, 2.1rem); font-weight: 800; letter-spacing:
       </a>
       <div style="display: flex; align-items: center; gap: 8px;">
         <span style="font-size: 14px; color: var(--muted);">or</span>
-        <a href="tel:+918050044248" style="font-size: 18px; font-weight: 700; color: var(--red); text-decoration: none;" onclick="gtag('event', 'phone_call', {'location': 'hero_passport'});">Call 8050044248</a>
+        <a href="tel:+918050044248" style="font-size: 18px; font-weight: 700; color: var(--red); text-decoration: none;" onclick="return gtag_report_conversion('tel:+918050044248');">Call 8050044248</a>
       </div>
     </div>
 
@@ -392,7 +410,7 @@ h2 { font-size: clamp(1.55rem, 2.8vw, 2.1rem); font-weight: 800; letter-spacing:
       <div class="h-icon ic-red">📍</div>
       <div><div class="h-label">Location</div><div class="h-val">Back Gate, IBS Kengeri</div></div>
     </div>
-    <a href="tel:+918050044248" class="h-card h-card--call" style="text-decoration:none;">
+    <a href="tel:+918050044248" class="h-card h-card--call" style="text-decoration:none;" onclick="return gtag_report_conversion('tel:+918050044248');">
       <div class="h-icon ic-wa">📞</div>
       <div><div class="h-label">Tap to Call</div><div class="h-val" style="color:var(--green);">8050044248</div></div>
     </a>
@@ -584,7 +602,7 @@ h2 { font-size: clamp(1.55rem, 2.8vw, 2.1rem); font-weight: 800; letter-spacing:
     <div class="sticky-bar-label">Need prints right now?</div>
     <div class="sticky-bar-number">+91 80500 44248</div>
   </div>
-  <a href="tel:+918050044248" class="sticky-btn-call">📞 Call</a>
+  <a href="tel:+918050044248" class="sticky-btn-call" onclick="return gtag_report_conversion('tel:+918050044248');">📞 Call</a>
   <a href="https://wa.me/918050044248" class="sticky-btn-wa">WhatsApp</a>
 </div>
 
@@ -761,5 +779,3 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 </body>
 </html>
-
-```
